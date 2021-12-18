@@ -3,13 +3,54 @@
 <head>
     <title>Rock, Paper Scissors</title>
     <meta charset="utf-8">
-    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>Welcome to Rock, Paper Scissors!</h1>
-    <h3>Adding an h3 to see changes on new branch</h3>
-    <p>See the console to play</p>
+    <div class="title">
+        Rock, Paper, Scissors
+    </div>
+    <div class="subtitle">
+        First to 5 wins!
+    </div>
+    <div class="instructions">
+        Choose Your Weapon:
+    </div>
+
+    <div class="weapons">
+        <div class="player-score-display">
+            Your Score:
+            <div id="player-score">
+                <p>0</p>
+            </div>
+        </div>
+
+        <input id="rockBtn" type="image" src="images/rock2.png" width="175" height="175">
+        <input id="paperBtn" type="image" src="images/paper2.png" width="175" height="175">
+        <input id="scissorsBtn" type="image" src="images/scissors.png" width="175" height="175">
+
+        <div class="computer-score-display">
+            Comp Score:
+            <div id="computer-score">
+                <p>0</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="display-selections">
+        Begin the Game!
+    </div>
+
+    <div class="display-results">
+        <p id="winnerDisplay">Results</p>
+    </div>
+
+
+
 
     <script type="text/javascript" src="index.js"></script>
 </body>
