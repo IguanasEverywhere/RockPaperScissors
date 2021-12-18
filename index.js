@@ -32,23 +32,31 @@ function game() {
 
     let playerSelection;
 
+    const clickSound = new Audio("sounds/clickSound.wav");
+
     // button event listeners //////////////////////////////////////////////////
 
     const rockBtn = document.getElementById("rockBtn");
     rockBtn.addEventListener('click', () => {
         playerSelection = "Rock";
+        clickSound.currentTime=0;
+        clickSound.play();
         playARound(computerPlay(), playerSelection);
     });
 
     const paperBtn = document.getElementById("paperBtn");
     paperBtn.addEventListener('click', () => {
         playerSelection = "Paper";
+        clickSound.currentTime=0;
+        clickSound.play();
         playARound(computerPlay(), playerSelection);
     });
 
     const scissorsBtn = document.getElementById("scissorsBtn");
     scissorsBtn.addEventListener('click', () => {
         playerSelection = "Scissors";
+        clickSound.currentTime=0;
+        clickSound.play();
         playARound(computerPlay(), playerSelection);
     });
 
@@ -63,6 +71,10 @@ function game() {
         let playerScoreDisplay = document.querySelector("#player-score");
         let computerScoreDisplay = document.querySelector("#computer-score");
         let choicesDisplay = document.querySelector("#display-selections");
+        let bodyColor = document.querySelector("body");
+
+        bodyColor.style.backgroundColor="#950101";
+
 
         if (computerSelection === "Rock") {
             if (playerSelection === "Rock") {
@@ -108,6 +120,11 @@ function game() {
             winnerDisplay.textContent = "GAME OVER! Click a weapon to start again.";
             playerScore = 0;
             computerScore = 0;
+
+            const gameOverAudio = new Audio("sounds/gameOver.wav");
+            gameOverAudio.currentTime=0;
+            gameOverAudio.play();
+            bodyColor.style.backgroundColor="#3745ed";
         }
           
     }
